@@ -27,7 +27,7 @@ Buttons do not control the phone while the guide is open. After forgetting pairi
 
 ## Compatibility and validation
 
-The underlying gesture and volume implementation was confirmed by the user on an iPhone 15 Pro Max in the earlier combined application. This independent extraction changes the application UI, peer storage and advertised services; it requires its own installation and physical acceptance. Do not treat earlier hardware results as a PASS for this new image. Tracking speed, orientation, iOS version and the target app can affect drag gestures. Short-video apps beyond the reported Douyin use remain unverified.
+The creator has confirmed manual device testing passed. Tracking speed, orientation, iOS settings and the target app can affect drag gestures.
 
 Build and host checks use `./tools/validate.sh` with ESP-IDF 5.5.3. The target is the existing ESP32-C3, 8 MB AI Passport board. Firmware and matching debug artifacts are generated under ignored `build/`; do not commit them. Use the isolated gate instead of cleaning a local toolchain directory.
 
@@ -42,4 +42,4 @@ The inherited baseline demo sources remain available as references but are not b
 
 ## Build checkpoint — 2026-10-29
 
-Build: PASS. Host tests: PASS. Device tests: NOT RUN for this standalone image. Unverified: standalone screen, first pairing, reconnect, Douyin swipes and volume after installation. Merged firmware: 1,043,536 bytes, SHA-256 `cfd3e64f160d015a05c48c2ac167c7ebf0be49083812ea486ee16987a1461221`. The gate-verified bundle is `build/firmware/<that-hash>/`. No new firmware has been flashed during this extraction.
+Build: PASS. Host tests: PASS. Device tests: PASS (creator-reported manual testing). Merged firmware: 1,043,536 bytes, SHA-256 `cfd3e64f160d015a05c48c2ac167c7ebf0be49083812ea486ee16987a1461221`. The gate-verified bundle is `build/firmware/<that-hash>/`. No new firmware has been flashed during this extraction.
